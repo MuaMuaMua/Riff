@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="KGk-i7-Jjw" customClass="ExitCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5D-d5-wTS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="N5D-d5-wTS" secondAttribute="bottom" id="DXg-OA-NtU"/>
+                    <constraint firstItem="N5D-d5-wTS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="GNv-fU-Y4i"/>
+                    <constraint firstItem="N5D-d5-wTS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HIC-t2-4le"/>
+                    <constraint firstAttribute="trailing" secondItem="N5D-d5-wTS" secondAttribute="trailing" id="KH2-qL-uTS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="exitBtn" destination="N5D-d5-wTS" id="AHl-yl-ABh"/>
+            </connections>
+            <point key="canvasLocation" x="543" y="409.5"/>
+        </tableViewCell>
+    </objects>
+</document>
