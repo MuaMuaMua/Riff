@@ -49,6 +49,8 @@
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
 }
 
@@ -64,6 +66,8 @@
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
 }
 
@@ -81,6 +85,8 @@
         }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
 }
 
@@ -102,6 +108,8 @@
             dtzsuccessBlock(responseData);
         }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
         NSLog(@"验证失败");
         //重写失败的block
     }];
@@ -116,6 +124,8 @@
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
 }
 
@@ -131,6 +141,8 @@
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
 }
 
@@ -145,6 +157,8 @@
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
 }
 
@@ -159,7 +173,8 @@
         NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
     
     
@@ -179,7 +194,8 @@
         NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
 }
 
@@ -196,6 +212,8 @@
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+        NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
+        dtzFailBlock(errorDictionary);
     }];
 }
 

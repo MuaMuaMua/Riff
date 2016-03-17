@@ -121,7 +121,6 @@
 }
 
 - (void)tapNavigationBar {
-
     if (_riffBtn.isHidden) {
         _riffBtn.hidden = NO;
         _settingBtn.hidden = NO;
@@ -131,7 +130,6 @@
         _personalInfoBtn.hidden = YES;
         _settingBtn.hidden = YES;
     }
-    
 }
 
 - (void)setupBtns {
@@ -281,6 +279,5 @@
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
-
 
 @end

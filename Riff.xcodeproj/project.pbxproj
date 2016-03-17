@@ -33,6 +33,14 @@
 		6086BFBA1C968B98001F3702 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6086BFB81C968B98001F3702 /* SignupViewController.xib */; };
 		6086BFBE1C968BB3001F3702 /* SetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6086BFBC1C968BB3001F3702 /* SetPwdViewController.m */; };
 		6086BFBF1C968BB3001F3702 /* SetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6086BFBD1C968BB3001F3702 /* SetPwdViewController.xib */; };
+		608B3FE81C99346E00E0615B /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608B3FE61C99346E00E0615B /* NotificationViewController.m */; };
+		608B3FE91C99346E00E0615B /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608B3FE71C99346E00E0615B /* NotificationViewController.xib */; };
+		608B3FED1C99373600E0615B /* NewNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 608B3FEB1C99373600E0615B /* NewNotificationCell.m */; };
+		608B3FEE1C99373600E0615B /* NewNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608B3FEC1C99373600E0615B /* NewNotificationCell.xib */; };
+		608B3FF21C99454400E0615B /* BasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608B3FF01C99454400E0615B /* BasicInfoViewController.m */; };
+		608B3FF31C99454400E0615B /* BasicInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608B3FF11C99454400E0615B /* BasicInfoViewController.xib */; };
+		608B3FF81C99460E00E0615B /* BasicInfoAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 608B3FF61C99460E00E0615B /* BasicInfoAvatarCell.m */; };
+		608B3FF91C99460E00E0615B /* BasicInfoAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608B3FF71C99460E00E0615B /* BasicInfoAvatarCell.xib */; };
 		6097F9A61C91529F0053CE79 /* AdvCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6097F9A41C91529F0053CE79 /* AdvCell.m */; };
 		6097F9A71C91529F0053CE79 /* AdvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6097F9A51C91529F0053CE79 /* AdvCell.xib */; };
 		6097F9AB1C915D3E0053CE79 /* PersonalFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6097F9A91C915D3E0053CE79 /* PersonalFirstCell.m */; };
@@ -120,6 +128,18 @@
 		6086BFBB1C968BB3001F3702 /* SetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPwdViewController.h; sourceTree = "<group>"; };
 		6086BFBC1C968BB3001F3702 /* SetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPwdViewController.m; sourceTree = "<group>"; };
 		6086BFBD1C968BB3001F3702 /* SetPwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPwdViewController.xib; sourceTree = "<group>"; };
+		608B3FE51C99346E00E0615B /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		608B3FE61C99346E00E0615B /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		608B3FE71C99346E00E0615B /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		608B3FEA1C99373600E0615B /* NewNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNotificationCell.h; sourceTree = "<group>"; };
+		608B3FEB1C99373600E0615B /* NewNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewNotificationCell.m; sourceTree = "<group>"; };
+		608B3FEC1C99373600E0615B /* NewNotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewNotificationCell.xib; sourceTree = "<group>"; };
+		608B3FEF1C99454400E0615B /* BasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfoViewController.h; sourceTree = "<group>"; };
+		608B3FF01C99454400E0615B /* BasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInfoViewController.m; sourceTree = "<group>"; };
+		608B3FF11C99454400E0615B /* BasicInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicInfoViewController.xib; sourceTree = "<group>"; };
+		608B3FF51C99460E00E0615B /* BasicInfoAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfoAvatarCell.h; sourceTree = "<group>"; };
+		608B3FF61C99460E00E0615B /* BasicInfoAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInfoAvatarCell.m; sourceTree = "<group>"; };
+		608B3FF71C99460E00E0615B /* BasicInfoAvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicInfoAvatarCell.xib; sourceTree = "<group>"; };
 		6097F9A31C91529F0053CE79 /* AdvCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvCell.h; sourceTree = "<group>"; };
 		6097F9A41C91529F0053CE79 /* AdvCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvCell.m; sourceTree = "<group>"; };
 		6097F9A51C91529F0053CE79 /* AdvCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvCell.xib; sourceTree = "<group>"; };
@@ -269,6 +289,7 @@
 		60579D511C8FFC1400801A88 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				608B3FF41C9945EB00E0615B /* BasicInfoCell */,
 				6097F9A31C91529F0053CE79 /* AdvCell.h */,
 				6097F9A41C91529F0053CE79 /* AdvCell.m */,
 				6097F9A51C91529F0053CE79 /* AdvCell.xib */,
@@ -287,6 +308,9 @@
 				6086BFAA1C966774001F3702 /* ExitCell.h */,
 				6086BFAB1C966774001F3702 /* ExitCell.m */,
 				6086BFAC1C966774001F3702 /* ExitCell.xib */,
+				608B3FEA1C99373600E0615B /* NewNotificationCell.h */,
+				608B3FEB1C99373600E0615B /* NewNotificationCell.m */,
+				608B3FEC1C99373600E0615B /* NewNotificationCell.xib */,
 			);
 			name = Cell;
 			path = Riff/Cell;
@@ -327,6 +351,12 @@
 				6097F9D41C92D0100053CE79 /* RiffViewController.h */,
 				6097F9D51C92D0100053CE79 /* RiffViewController.m */,
 				6097F9D61C92D0100053CE79 /* RiffViewController.xib */,
+				608B3FE51C99346E00E0615B /* NotificationViewController.h */,
+				608B3FE61C99346E00E0615B /* NotificationViewController.m */,
+				608B3FE71C99346E00E0615B /* NotificationViewController.xib */,
+				608B3FEF1C99454400E0615B /* BasicInfoViewController.h */,
+				608B3FF01C99454400E0615B /* BasicInfoViewController.m */,
+				608B3FF11C99454400E0615B /* BasicInfoViewController.xib */,
 			);
 			name = ViewController;
 			path = Riff/ViewController;
@@ -361,6 +391,16 @@
 				6086BFBD1C968BB3001F3702 /* SetPwdViewController.xib */,
 			);
 			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		608B3FF41C9945EB00E0615B /* BasicInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				608B3FF51C99460E00E0615B /* BasicInfoAvatarCell.h */,
+				608B3FF61C99460E00E0615B /* BasicInfoAvatarCell.m */,
+				608B3FF71C99460E00E0615B /* BasicInfoAvatarCell.xib */,
+			);
+			path = BasicInfoCell;
 			sourceTree = "<group>";
 		};
 		6097F9B71C927D2E0053CE79 /* BasicVCDataSource */ = {
@@ -498,19 +538,23 @@
 			files = (
 				6086BFB51C968B73001F3702 /* LoginViewController.xib in Resources */,
 				60579D2D1C8FC34D00801A88 /* LaunchScreen.storyboard in Resources */,
+				608B3FF31C99454400E0615B /* BasicInfoViewController.xib in Resources */,
 				6097F9D01C929C040053CE79 /* BasicInfoCell.xib in Resources */,
 				6097F9B61C9171760053CE79 /* SocialViewController.xib in Resources */,
 				6097F9D81C92D0100053CE79 /* RiffViewController.xib in Resources */,
+				608B3FEE1C99373600E0615B /* NewNotificationCell.xib in Resources */,
 				6097F9A71C91529F0053CE79 /* AdvCell.xib in Resources */,
 				6097F9AC1C915D3E0053CE79 /* PersonalFirstCell.xib in Resources */,
 				60579D2A1C8FC34D00801A88 /* Assets.xcassets in Resources */,
 				60579D5D1C90050600801A88 /* RiffNavigationController.xib in Resources */,
+				608B3FF91C99460E00E0615B /* BasicInfoAvatarCell.xib in Resources */,
 				60579D281C8FC34D00801A88 /* Main.storyboard in Resources */,
 				6086BFBA1C968B98001F3702 /* SignupViewController.xib in Resources */,
 				6086BFBF1C968BB3001F3702 /* SetPwdViewController.xib in Resources */,
 				6097F9BF1C927DC80053CE79 /* SettingViewController.xib in Resources */,
 				6086BFAE1C966774001F3702 /* ExitCell.xib in Resources */,
 				60579D581C90003F00801A88 /* MainViewController.xib in Resources */,
+				608B3FE91C99346E00E0615B /* NotificationViewController.xib in Resources */,
 				6097F9CB1C929ABC0053CE79 /* BasicAvatarCell.xib in Resources */,
 				6097F9B11C9163D20053CE79 /* PersonalSecondCell.xib in Resources */,
 				60579D621C900DAD00801A88 /* BasicViewController.xib in Resources */,
@@ -591,6 +635,7 @@
 				6086BFB41C968B73001F3702 /* LoginViewController.m in Sources */,
 				6097F9CF1C929C040053CE79 /* BasicInfoCell.m in Sources */,
 				60579D251C8FC34D00801A88 /* ViewController.m in Sources */,
+				608B3FE81C99346E00E0615B /* NotificationViewController.m in Sources */,
 				60579D701C91106C00801A88 /* RiffNetworkManager.m in Sources */,
 				6097F9B01C9163D20053CE79 /* PersonalSecondCell.m in Sources */,
 				6086BFB91C968B98001F3702 /* SignupViewController.m in Sources */,
@@ -604,11 +649,14 @@
 				60579D6D1C90230100801A88 /* SettingDataSource.m in Sources */,
 				6097F9D71C92D0100053CE79 /* RiffViewController.m in Sources */,
 				60579D571C90003F00801A88 /* MainViewController.m in Sources */,
+				608B3FF81C99460E00E0615B /* BasicInfoAvatarCell.m in Sources */,
 				6097F9BA1C927D470053CE79 /* BasicVCDataSource.m in Sources */,
 				6097F9CA1C929ABC0053CE79 /* BasicAvatarCell.m in Sources */,
 				60579D611C900DAD00801A88 /* BasicViewController.m in Sources */,
 				6097F9AB1C915D3E0053CE79 /* PersonalFirstCell.m in Sources */,
 				6097F9D31C92A02F0053CE79 /* BasicInfoDataSource.m in Sources */,
+				608B3FED1C99373600E0615B /* NewNotificationCell.m in Sources */,
+				608B3FF21C99454400E0615B /* BasicInfoViewController.m in Sources */,
 				60579D6A1C9022E900801A88 /* PersonInfoDataSource.m in Sources */,
 				6097F9BE1C927DC80053CE79 /* SettingViewController.m in Sources */,
 			);

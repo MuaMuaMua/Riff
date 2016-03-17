@@ -42,5 +42,4 @@ typedef void (^ DTZFailBlock)(NSDictionary * failBlock);
 
 - (void)isMobileExitWithMobileNumber:(NSString *)mobileNumber DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock;
 
-
 @end
