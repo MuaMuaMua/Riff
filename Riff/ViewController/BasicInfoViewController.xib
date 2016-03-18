@@ -16,9 +16,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zqB-YK-iaf">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zqB-YK-iaf">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -28,7 +28,7 @@
                 <constraint firstItem="zqB-YK-iaf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UIz-b6-dm4"/>
                 <constraint firstAttribute="bottom" secondItem="zqB-YK-iaf" secondAttribute="bottom" id="fV3-yI-clc"/>
             </constraints>
-            <point key="canvasLocation" x="129" y="264"/>
+            <point key="canvasLocation" x="368" y="279"/>
         </view>
     </objects>
 </document>

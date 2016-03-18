@@ -60,6 +60,9 @@
 		6097F9D31C92A02F0053CE79 /* BasicInfoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6097F9D21C92A02F0053CE79 /* BasicInfoDataSource.m */; };
 		6097F9D71C92D0100053CE79 /* RiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6097F9D51C92D0100053CE79 /* RiffViewController.m */; };
 		6097F9D81C92D0100053CE79 /* RiffViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6097F9D61C92D0100053CE79 /* RiffViewController.xib */; };
+		60B86A531C9B9E6C0084858A /* BasicInfoVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B86A521C9B9E6C0084858A /* BasicInfoVCDataSource.m */; };
+		60B86A571C9BCFE50084858A /* AvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B86A551C9BCFE50084858A /* AvatarViewController.m */; };
+		60B86A581C9BCFE50084858A /* AvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B86A561C9BCFE50084858A /* AvatarViewController.xib */; };
 		D976312D27E223A9260DC7DA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A432AF41A5212579EC3E823 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +173,11 @@
 		6097F9D41C92D0100053CE79 /* RiffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiffViewController.h; sourceTree = "<group>"; };
 		6097F9D51C92D0100053CE79 /* RiffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiffViewController.m; sourceTree = "<group>"; };
 		6097F9D61C92D0100053CE79 /* RiffViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiffViewController.xib; sourceTree = "<group>"; };
+		60B86A511C9B9E6C0084858A /* BasicInfoVCDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfoVCDataSource.h; sourceTree = "<group>"; };
+		60B86A521C9B9E6C0084858A /* BasicInfoVCDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInfoVCDataSource.m; sourceTree = "<group>"; };
+		60B86A541C9BCFE50084858A /* AvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarViewController.h; sourceTree = "<group>"; };
+		60B86A551C9BCFE50084858A /* AvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarViewController.m; sourceTree = "<group>"; };
+		60B86A561C9BCFE50084858A /* AvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarViewController.xib; sourceTree = "<group>"; };
 		B0C87C348C9ECF110EE0F837 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B36DC9E0C8F885878ADA7F0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,6 +337,7 @@
 		60579D531C8FFC1400801A88 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				60B86A501C9B9E500084858A /* BasicInfoDataSource */,
 				6086BFB01C968B5A001F3702 /* LoginViewController */,
 				6097F9C01C927E530053CE79 /* SettingVCDataSource */,
 				6097F9B71C927D2E0053CE79 /* BasicVCDataSource */,
@@ -357,6 +366,9 @@
 				608B3FEF1C99454400E0615B /* BasicInfoViewController.h */,
 				608B3FF01C99454400E0615B /* BasicInfoViewController.m */,
 				608B3FF11C99454400E0615B /* BasicInfoViewController.xib */,
+				60B86A541C9BCFE50084858A /* AvatarViewController.h */,
+				60B86A551C9BCFE50084858A /* AvatarViewController.m */,
+				60B86A561C9BCFE50084858A /* AvatarViewController.xib */,
 			);
 			name = ViewController;
 			path = Riff/ViewController;
@@ -419,6 +431,15 @@
 				6097F9C51C92802E0053CE79 /* SettingVCDataSource.m */,
 			);
 			path = SettingVCDataSource;
+			sourceTree = "<group>";
+		};
+		60B86A501C9B9E500084858A /* BasicInfoDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				60B86A511C9B9E6C0084858A /* BasicInfoVCDataSource.h */,
+				60B86A521C9B9E6C0084858A /* BasicInfoVCDataSource.m */,
+			);
+			path = BasicInfoDataSource;
 			sourceTree = "<group>";
 		};
 		651B3E3FE2900E2355C1BEA1 /* Frameworks */ = {
@@ -543,6 +564,7 @@
 				6097F9B61C9171760053CE79 /* SocialViewController.xib in Resources */,
 				6097F9D81C92D0100053CE79 /* RiffViewController.xib in Resources */,
 				608B3FEE1C99373600E0615B /* NewNotificationCell.xib in Resources */,
+				60B86A581C9BCFE50084858A /* AvatarViewController.xib in Resources */,
 				6097F9A71C91529F0053CE79 /* AdvCell.xib in Resources */,
 				6097F9AC1C915D3E0053CE79 /* PersonalFirstCell.xib in Resources */,
 				60579D2A1C8FC34D00801A88 /* Assets.xcassets in Resources */,
@@ -634,6 +656,7 @@
 				6097F9C61C92802E0053CE79 /* SettingVCDataSource.m in Sources */,
 				6086BFB41C968B73001F3702 /* LoginViewController.m in Sources */,
 				6097F9CF1C929C040053CE79 /* BasicInfoCell.m in Sources */,
+				60B86A571C9BCFE50084858A /* AvatarViewController.m in Sources */,
 				60579D251C8FC34D00801A88 /* ViewController.m in Sources */,
 				608B3FE81C99346E00E0615B /* NotificationViewController.m in Sources */,
 				60579D701C91106C00801A88 /* RiffNetworkManager.m in Sources */,
@@ -659,6 +682,7 @@
 				608B3FF21C99454400E0615B /* BasicInfoViewController.m in Sources */,
 				60579D6A1C9022E900801A88 /* PersonInfoDataSource.m in Sources */,
 				6097F9BE1C927DC80053CE79 /* SettingViewController.m in Sources */,
+				60B86A531C9B9E6C0084858A /* BasicInfoVCDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,11 +827,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Riff/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.scau.bighead.Riff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -818,11 +844,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Riff/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.scau.bighead.Riff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -7,17 +7,18 @@
 //
 
 #import "MainViewController.h"
-#import "BasicViewController.h"
+//#import "BasicViewController.h"
 #import "RiffDataSource.h"
 #import "PersonInfoDataSource.h"
 #import "SettingDataSource.h"
+#import "BasicInfoViewController.h"
 
 #define winSize [[UIScreen mainScreen]bounds]
 
 //CGRect winSize = [[UIScreen mainScreen]bounds];
 
 
-@interface MainViewController ()<UITableViewDelegate> {
+@interface MainViewController ()<UITableViewDelegate,UIGestureRecognizerDelegate> {
     
     IBOutlet UITableView *_mainTableView;
     
@@ -57,11 +58,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _dataSourceType = 1;
     self.title = @"Riff";
+    [self setupDataSource];
     [self setupTapGesture];
     [self setupExitBtn];
-    [self setupNavigationBarTapGesture];
+//    [self setupNavigationBarTapGesture];
     [self setupBtns];
-    [self setupDataSource];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,15 +89,15 @@
 
 #pragma mark - setupTableViewTapGesture 
 - (void)setupTapGesture {
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureAction)];
-    tapGesture.numberOfTapsRequired = 1;
-    _mainTableView.userInteractionEnabled = YES;
-    [_mainTableView addGestureRecognizer:tapGesture];
+//    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureAction)];
+//    tapGesture.numberOfTapsRequired = 1;
+//    _mainTableView.userInteractionEnabled = YES;
+//    [_mainTableView addGestureRecognizer:tapGesture];
 }
 
-- (void)tapGestureAction {
-    [self hideBtns];
-}
+//- (void)tapGestureAction {
+//    [self hideBtns];
+//}
 
 #pragma mark - setupExitBtn
 - (void)setupExitBtn {
@@ -179,6 +180,7 @@
         return;
     }else {
         _mainTableView.dataSource = _personInfoDataSource;
+        _mainTableView.delegate = self;
         [_mainTableView reloadData];
     }
     [self hideBtns];
@@ -192,6 +194,7 @@
         return;
     }else {
         _mainTableView.dataSource = _settingDataSource;
+        _mainTableView.delegate = self;
         [_mainTableView reloadData];
     }
     [self hideBtns];
@@ -205,6 +208,7 @@
         return;
     }else {
         _mainTableView.dataSource = _riffDataSource;
+        _mainTableView.delegate = self;
         [_mainTableView reloadData];
     }
     [self hideBtns];
@@ -219,22 +223,47 @@
     _settingBtn.hidden = YES;
 }
 
-
 #pragma mark - selectCell 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (_dataSourceType == 2) {
-        if (indexPath == 0) {
-            BasicViewController * basicViewController = [[BasicViewController alloc]init];
-            [self.navigationController pushViewController:basicViewController animated:YES];
-        }
-    }
     if ([_mainTableView.dataSource isKindOfClass:[RiffDataSource class]]) {
-        
+        if (indexPath.row == 0) {
+            //应该push webview 未写好
+            return;
+        }else {
+            return ;
+        }
     }else if ([_mainTableView.dataSource isKindOfClass:[PersonInfoDataSource class]]) {
-        
-    }else if ([_mainTableView.dataSource isKindOfClass:[BasicViewController class]]) {
-        
+        if (indexPath.row == 0) {
+            BasicInfoViewController * basicInfoViewController = [[BasicInfoViewController alloc]init];
+            [self.navigationController pushViewController:basicInfoViewController animated:YES];
+        }else {
+            return;
+        }
+    }else if ([_mainTableView.dataSource isKindOfClass:[SettingDataSource class]]) {
+        switch (indexPath.row) {
+            case 0:
+                //跳转到通知页面
+                
+                break;
+            case 1:
+                //跳转到隐私界面
+                
+                break;
+            case 2:
+                // 跳转到评价界面  appstore // 暂定 木有
+                
+                break;
+            case 3:
+                // 关于界面 push
+                
+                break;
+            case 4:
+                // 跳转到安全界面  修改密码 // 暂无
+                
+                break;
+            default:
+                break;
+        }
     }
     
 }

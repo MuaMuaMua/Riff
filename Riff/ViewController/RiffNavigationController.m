@@ -20,7 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,[UIFont systemFontOfSize:30],UITextAttributeFont, nil]];
+    [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,[UIFont systemFontOfSize:22],UITextAttributeFont, nil]];
+    
+    [self.navigationItem.backBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,[UIFont systemFontOfSize:22],UITextAttributeFont, nil] forState:UIControlStateNormal];
+
     
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"BGVIEW"] forBarMetrics:UIBarMetricsDefault];
     

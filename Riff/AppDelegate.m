@@ -51,7 +51,10 @@
     //消息推送注册
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    [self setupLoginVC];
+//    [self setupLoginVC];
+    [self setupNavigationController];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
     return YES;
 }
 
