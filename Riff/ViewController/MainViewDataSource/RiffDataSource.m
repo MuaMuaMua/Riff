@@ -33,10 +33,10 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // 判断 设置多少次数
-    cell.totalMoneyLabel.text = @"0次";
+    cell.totalMoneyLabel.text = @"0";
     if ([[NSUserDefaults standardUserDefaults]objectForKey:@"clickTime"]) {
         NSNumber * clickTime = [[NSUserDefaults standardUserDefaults]objectForKey:@"clickTime"];
-        cell.totalMoneyLabel.text = [NSString stringWithFormat:@"%d次",clickTime.intValue];
+        cell.totalMoneyLabel.text = [NSString stringWithFormat:@"%d",clickTime.intValue];
     }
     NSString * avatarStr = [[NSUserDefaults standardUserDefaults]objectForKey:@"companyLogoUrl"];
     if (avatarStr) {

@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"性别";
     [self setupDataSource];
     [self setupNetworkManager];
     // Do any additional setup after loading the view from its nib.

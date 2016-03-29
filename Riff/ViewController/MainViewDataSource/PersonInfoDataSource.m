@@ -37,9 +37,9 @@
         }
         NSString * avatarUrl = [[NSUserDefaults standardUserDefaults]objectForKey:@"avatarUrl"];
         if (avatarUrl) {
-            [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"CHUANG"] completed:nil];
+            [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"BlankAvatar"] completed:nil];
         }else {
-            cell.avatarImageView.image = [UIImage imageNamed:@"CHUANG"];
+            cell.avatarImageView.image = [UIImage imageNamed:@"BlankAvatar"];
         }
         if ([[NSUserDefaults standardUserDefaults]objectForKey:@"username"]) {
             cell.userName.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
@@ -56,7 +56,7 @@
         cell.delegate = self;
         if ([[NSUserDefaults standardUserDefaults]objectForKey:@"totalClickTime"]) {
             NSNumber * clickTime = [[NSUserDefaults standardUserDefaults]objectForKey:@"totalClickTime"];
-            cell.numberlLabel.text = [NSString stringWithFormat:@"%d次",clickTime.intValue];
+            cell.numberlLabel.text = [NSString stringWithFormat:@"%d",clickTime.intValue];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell.withdrawalBtn setTitleColor:[UIColor colorWithRed:94.0/255 green:80.0/255 blue:120.0/255 alpha:1] forState:UIControlStateNormal];

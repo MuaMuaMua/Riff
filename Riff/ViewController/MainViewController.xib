@@ -20,9 +20,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHR-J5-gck" userLabel="WeChatDis">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHR-J5-gck" userLabel="WeChatDis">
                     <rect key="frame" x="128" y="613" width="49" height="49"/>
-                    <state key="normal" image="WeChatFrd"/>
+                    <state key="normal" image="WeChat"/>
                     <connections>
                         <action selector="clickWechatDis:" destination="-1" eventType="touchUpInside" id="TzT-5t-doF"/>
                     </connections>
@@ -49,9 +49,9 @@
                         <constraint firstAttribute="width" constant="1" id="hUK-MA-crl"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk8-Wx-dGh" userLabel="WeChatFrd">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk8-Wx-dGh" userLabel="WeChatFrd">
                     <rect key="frame" x="59" y="613" width="49" height="49"/>
-                    <state key="normal" image="WeChat"/>
+                    <state key="normal" image="WeChatFrd"/>
                     <connections>
                         <action selector="clickWechatFrd:" destination="-1" eventType="touchUpInside" id="L7m-KN-fhD"/>
                     </connections>

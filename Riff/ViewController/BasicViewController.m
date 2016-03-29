@@ -8,6 +8,7 @@
 
 #import "BasicViewController.h"
 #import "BasicInfoDataSource.h"
+#import "MainViewController.h"
 
 @interface BasicViewController ()<UITableViewDelegate> {
     BasicInfoDataSource * _basicInfoDataSource;
@@ -25,6 +26,17 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+
+//    if ([_mainTableView.dataSource isKindOfClass:[PersonInfoDataSource class]]) {
+//        self.title = @"個人信息 ▼";
+//    }else if ([_mainTableView.dataSource isKindOfClass:[RiffDataSource class]]) {
+//        self.title = @"Riff ▼";
+//    }else if ([_mainTableView.dataSource isKindOfClass:[SettingDataSource class]]) {
+//        self.title = @"設置 ▼";
+//    }
 }
 
 #pragma mark - tableview Setting 

@@ -61,14 +61,37 @@
     AppDelegate * _appDelegate;
     
     UIWebView * _webView;
+    
+    NSString * _clickStr;
+    
+    UIImageView * _downImageView;
 }
 
 @end
 
 @implementation MainViewController
 
+#pragma mark - setupNavigationDownClickBtn 
+- (void)setupNavigationDownClickBtn {
+    
+}
+
+#pragma mark - initialize navigator gesture
+- (void)initializeNavigatorTapGesture {
+    if (_tapGesture) {
+        
+    }else {
+        _tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapNavigationBar)];
+        _tapGesture.numberOfTapsRequired = 1;
+        self.navigationController.navigationBar.userInteractionEnabled = YES;
+        [self.navigationController.navigationBar addGestureRecognizer:_tapGesture];
+    }
+}
+
+
 #pragma mark - webview delegate
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [self initializeNavigatorTapGesture];
     _mbpHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     _mbpHud.labelText = @"网络故障,请检查您的网络";
     _mbpHud.mode = MBProgressHUDModeText;
@@ -80,19 +103,21 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    _mbpHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    _mbpHud.labelText = @"正在加载";
-    _mbpHud.mode = MBProgressHUDModeIndeterminate;
+    if ([_mainTableView.dataSource isKindOfClass:[RiffDataSource class]]) {
+        _mbpHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        _mbpHud.labelText = @"正在加载";
+        _mbpHud.mode = MBProgressHUDModeIndeterminate;
+    }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self initializeNavigatorTapGesture];
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     _mbpHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     _mbpHud.labelText = @"加载成功";
     _mbpHud.mode = MBProgressHUDModeText;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^{
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     });
 }
@@ -104,6 +129,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _dataSourceType = 1;
     self.title = @"Riff ▼";
+    
+    [self.navigationController.navigationBar addSubview:_downImageView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNewPassage) name:@"ReloadNewPassage" object:nil];
     [self setupDataSource];
     [self setupExitBtn];
@@ -116,17 +143,20 @@
     [super didReceiveMemoryWarning];
 }
 
+
 - (void)viewWillAppear:(BOOL)animated {
+    _tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapNavigationBar)];
+    _tapGesture.numberOfTapsRequired = 1;
+    self.navigationController.navigationBar.userInteractionEnabled = YES;
+    [self.navigationController.navigationBar addGestureRecognizer:_tapGesture];
     //判断是否nsuserdefault 中的参数是否是空 如果是空的话  进入直接reload
     if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"ReloadKey"] isEqualToString:@"YES"]) {
         [self reloadNewPassage];
         [[NSUserDefaults standardUserDefaults]setObject:@"NO" forKey:@"ReloadKey"];
     }
-    
     if ([_mainTableView.dataSource isKindOfClass:[PersonInfoDataSource class]]) {
         [_mainTableView reloadData];
     }
-    
 }
 
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
@@ -139,16 +169,16 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    _tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapNavigationBar)];
-    _tapGesture.numberOfTapsRequired = 1;
-    self.navigationController.navigationBar.userInteractionEnabled = YES;
-    [self.navigationController.navigationBar addGestureRecognizer:_tapGesture];
     UIView * statusBarView = [[UIView alloc]initWithFrame:CGRectMake(0, -20, winSize.size.width, 20)];
     statusBarView.backgroundColor = [UIColor whiteColor];
     [self.navigationController.navigationBar addSubview:statusBarView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    if ([_mainTableView.dataSource isKindOfClass:[PersonInfoDataSource class]]) {
+//        self.title = @"個人信息";
+    }
+    _downImageView.hidden = YES;
     [self.navigationController.navigationBar removeGestureRecognizer:_tapGesture];
 }
 
@@ -182,6 +212,13 @@
     _webView.scrollView.bouncesZoom = YES;
     _webView.scrollView.bounces = YES;
     _webView.scalesPageToFit = YES;
+    if ([_mainTableView.dataSource isKindOfClass:[PersonInfoDataSource class]]) {
+        _webView.hidden = YES;
+    }else if ([_mainTableView.dataSource isKindOfClass:[SettingDataSource class]]) {
+        _webView.hidden = YES;
+    }else if([_mainTableView.dataSource isKindOfClass:[RiffDataSource class]]) {
+        _webView.hidden = NO;
+    }
     [_mainTableView addSubview:_webView];
 }
 
@@ -363,6 +400,7 @@
     
     [_settingBtn setImage:[UIImage imageNamed:@"6SettingBtn"] forState:UIControlStateNormal];
     
+    
     //设置target
     [_riffBtn addTarget:self action:@selector(clickRiff) forControlEvents:UIControlEventTouchUpInside];
     
@@ -397,6 +435,7 @@
         _mainTableView.delegate = self;
         [_mainTableView reloadData];
     }
+    _downImageView.frame = CGRectMake(winSize.size.width / 2 + 45, 11, 20, 20);
     //获取新的总次数。
     [self getNewCount];
     [self hideBtns];
@@ -415,6 +454,7 @@
         _mainTableView.delegate = self;
         [_mainTableView reloadData];
     }
+    _downImageView.frame = CGRectMake(winSize.size.width / 2 + 25, 11, 20, 20);
     [self hideBtns];
     _webView.hidden = YES;
     _exitBtn.hidden = NO;
@@ -431,6 +471,7 @@
         _mainTableView.delegate = self;
         [_mainTableView reloadData];
     }
+    _downImageView.frame = CGRectMake(winSize.size.width/2+18, 11, 20, 20);
     [self hideBtns];
     _webView.hidden = NO;
     _exitBtn.hidden = YES;
@@ -482,7 +523,6 @@
     if ([_mainTableView.dataSource isKindOfClass:[RiffDataSource class]]) {
         if (indexPath.row == 0) {
             //应该push webview 未写好
-            
             return;
         }else {
             return ;
@@ -490,6 +530,11 @@
     }else if ([_mainTableView.dataSource isKindOfClass:[PersonInfoDataSource class]]) {
         if (indexPath.row == 0) {
             BasicInfoViewController * basicInfoViewController = [[BasicInfoViewController alloc]init];
+            _downImageView.hidden = YES;
+//            self.title = @"嗰人信息";
+            UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
+            temporaryBarButtonItem.title=@"個人信息";
+            self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
             [self.navigationController pushViewController:basicInfoViewController animated:YES];
         }else {
             return;
@@ -497,16 +542,29 @@
     }else if ([_mainTableView.dataSource isKindOfClass:[SettingDataSource class]]) {
         if (indexPath.row == 0) {
             //跳转到通知
+            _downImageView.hidden = YES;
             NewNotificationVC * newNotificationVC = [[NewNotificationVC alloc]init];
+            _clickStr = @"設置";
+            UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
+            temporaryBarButtonItem.title=@"设置";
+            self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
             [self.navigationController pushViewController:newNotificationVC animated:YES];
         }else if (indexPath.row == 1) {
             // 跳转 到评价 由于还没有上架 所以 不能评价。
         }else if (indexPath.row == 2) {
+            _downImageView.hidden = YES;
             AboutRiffVC * aboutVC = [[AboutRiffVC alloc]init];
+            UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
+            temporaryBarButtonItem.title=@"设置";
+            self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
             [self.navigationController pushViewController:aboutVC animated:YES];
         }else if (indexPath.row == 3) {
             // 跳转到 密码修改的界面.
+            _downImageView.hidden = YES;
             ChangePwdVC * changePwdVC = [[ChangePwdVC alloc]init];
+            UIBarButtonItem *temporaryBarButtonItem=[[UIBarButtonItem alloc] init];
+            temporaryBarButtonItem.title=@"设置";
+            self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
             [self.navigationController pushViewController:changePwdVC animated:YES];
         }
     }

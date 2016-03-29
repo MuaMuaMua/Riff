@@ -14,6 +14,7 @@
 #import "GenderViewController.h"
 #import "SocialVC.h"
 #import <MBProgressHUD.h>
+#import "MainViewController.h"
 
 @interface BasicInfoViewController ()<UITableViewDelegate> {
     
@@ -29,6 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"基本信息";
+    self.navigationItem.leftBarButtonItem.title = @"個人信息";
+    [self.navigationItem.backBarButtonItem setTitle:@"個人信息"];
+    self.navigationController.navigationItem.backBarButtonItem.title = @"個人信息";
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadTableView) name:@"reloadTableView" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadError) name:@"reloadError" object:nil];
     [self setupTableViewDataSource];
@@ -41,6 +45,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [_tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+//    MainViewController * mainViewController = [self.navigationController.viewControllers objectAtIndex:0];
+//    mainViewController.title = @"個人信息";
 }
 
 #pragma mark - NSNotification CallBack
