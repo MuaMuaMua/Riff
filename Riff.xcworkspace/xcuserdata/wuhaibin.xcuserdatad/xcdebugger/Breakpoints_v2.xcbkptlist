@@ -9,217 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Riff/Service/RiffNetworkManager.m"
-            timestampString = "479723447.964437"
+            filePath = "Riff/AppDelegate.m"
+            timestampString = "480591604.313369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-sendVerificationCodeWithMobile:DTZSuccessBlock:DTZFailBlock:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RiffNetworkManager sendVerificationCodeWithMobile:DTZSuccessBlock:DTZFailBlock:]"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
-                  timestampString = "479983711.259453"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "300">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__82-[RiffNetworkManager sendVerificationCodeWithMobile:DTZSuccessBlock:DTZFailBlock:]_block_invoke"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
-                  timestampString = "479983711.259667"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "88">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Riff/ViewController/LoginViewController/SignupViewController.m"
-            timestampString = "479725107.583088"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-clickNext:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[SignupViewController clickNext:]_block_invoke51"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.260699"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "760">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_87"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.260837"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_88"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.260957"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[SignupViewController clickNext:]_block_invoke91"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.261075"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Riff/ViewController/LoginViewController/SignupViewController.m"
-            timestampString = "479725107.583088"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-clickNext:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[SignupViewController clickNext:]_block_invoke51"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.262485"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "760">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_87"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.262625"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_88"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.262733"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[SignupViewController clickNext:]_block_invoke91"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.262843"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Riff/ViewController/LoginViewController/SignupViewController.m"
-            timestampString = "479725107.583088"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "-clickNext:"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -229,61 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Riff/ViewController/LoginViewController/SignupViewController.m"
-            timestampString = "479724979.690777"
+            filePath = "Riff/ViewController/MainViewController.m"
+            timestampString = "480846293.932478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-clickNext:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[SignupViewController clickNext:]"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.264515"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "1016">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[SignupViewController clickNext:]_block_invoke51"
-                  moduleName = "Riff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/LoginViewController/SignupViewController.m"
-                  timestampString = "479983711.264642"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Riff/ViewController/LoginViewController/SignupViewController.m"
-            timestampString = "479725107.583088"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-clickNext:"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "-gestureRecognizer:shouldReceiveTouch:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -294,12 +42,345 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Riff/ViewController/AvatarViewController.m"
-            timestampString = "479982218.951144"
+            timestampString = "480845567.914521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-addRightBarBtn"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/ViewController/AvatarViewController.m"
+            timestampString = "480845567.914521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/ViewController/AvatarViewController.m"
+            timestampString = "480845567.914521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/ViewController/LoginViewController/LoginViewController.m"
+            timestampString = "480841954.850384"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-saveUserInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/Service/RiffNetworkManager.m"
+            timestampString = "480849360.613855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "-uploadUserAvatarUrlWithUrl:DTZSuccessBlock:DTZFailBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m"
+            timestampString = "480845317.807829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-setCompletionBlockWithSuccess:failure:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/ViewController/ChangePwdVC/ChangePwdVC.m"
+            timestampString = "480849732.308392"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-clickDone:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/ViewController/ChangePwdVC/ChangePwdVC.m"
+            timestampString = "480849732.308392"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-clickDone:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ChangePwdVC clickDone:]"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/ChangePwdVC/ChangePwdVC.m"
+                  timestampString = "480850833.529007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1589">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__25-[ChangePwdVC clickDone:]_block_invoke54"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/ViewController/ChangePwdVC/ChangePwdVC.m"
+                  timestampString = "480850833.529188"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/Service/RiffNetworkManager.m"
+            timestampString = "480849690.527051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "-userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/Service/RiffNetworkManager.m"
+            timestampString = "480849690.949438"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "-userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RiffNetworkManager userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:]"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
+                  timestampString = "480850833.531835"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "658">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__82-[RiffNetworkManager userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:]_block_invoke"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
+                  timestampString = "480850833.532026"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "90">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/Service/RiffNetworkManager.m"
+            timestampString = "480849691.952309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "-userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/Service/RiffNetworkManager.m"
+            timestampString = "480849692.514745"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "-userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RiffNetworkManager userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:]"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
+                  timestampString = "480850833.5342"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "819">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__82-[RiffNetworkManager userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:]_block_invoke"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
+                  timestampString = "480850833.534483"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "189">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_150"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
+                  timestampString = "480850833.535009"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_151"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
+                  timestampString = "480850833.535225"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "14">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__82-[RiffNetworkManager userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:]_block_invoke153"
+                  moduleName = "Riff"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuhaibin/Documents/work/Riff/Riff/Service/RiffNetworkManager.m"
+                  timestampString = "480850833.535368"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Riff/Service/RiffNetworkManager.m"
+            timestampString = "480850056.084775"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "-userChangePwdWithOldPwd:NewPwd:DTZSuccessBlock:DTZFailBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,6 +9,7 @@
 #import "BasicInfoDataSource.h"
 #import "BasicAvatarCell.h"
 #import "BasicInfoCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation BasicInfoDataSource
 
@@ -35,6 +36,16 @@
         if (cell == nil) {
             cell = [[BasicAvatarCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:certif1];
         }
+        
+        if ([[NSUserDefaults standardUserDefaults]objectForKey:@"avatarUrl"]) {
+            NSString * avatarUrl = [[NSUserDefaults standardUserDefaults]objectForKey:@"avatarUrl"];
+            [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"CHUANG"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                
+            }];
+        }else {
+            cell.avatarImageView.image = [UIImage imageNamed:@"CHUANG"];
+        }
+        
         return cell;
     }else {
         BasicInfoCell * cell = [tableView dequeueReusableCellWithIdentifier:certif2];
@@ -42,33 +53,46 @@
             cell = [[BasicInfoCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:certif2];
             //设置 cell的 具体的title 开实现赋值  和  跳转的信息的保存
         }
-        switch (indexPath.row) {
-            case 1:
-                cell.titleLabel.text = @"名字";
-                break;
-                case 2:
-                cell.titleLabel.text = @"性别";
-                break;
-                case 3:
-                cell.titleLabel.text = @"地區";
-                break;
-                case 4:
-                cell.titleLabel.text = @"生日";
-                break;
-                case 5:
-                cell.titleLabel.text = @"其他";
-            default:
-                break;
+        if (indexPath.row == 1) {
+            cell.titleLabel.text = @"名字";
+            NSString * nameStr = [[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
+            if (nameStr) {
+                cell.contentLabel.text = nameStr;
+            }else {
+                cell.contentLabel.text = @"";
+            }
+        }else if (indexPath.row == 2) {
+            cell.titleLabel.text = @"性别";
+            NSString * genderStr = [[NSUserDefaults standardUserDefaults]objectForKey:@"gender"];
+            if (genderStr) {
+                if ([genderStr isEqualToString:@"male"]) {
+                    cell.contentLabel.text = @"男";
+                }else {
+                    cell.contentLabel.text = @"女";
+                }
+            }else {
+                cell.contentLabel.text = @"";
+            }
+        }else if (indexPath.row == 3) {
+            cell.titleLabel.text = @"地区";
+            NSString * district = [[NSUserDefaults standardUserDefaults]objectForKey:@"district"];
+            if (district) {
+                cell.contentLabel.text = district;
+            }else {
+                cell.contentLabel.text = @"";
+            }
+            cell.contentLabel.text = @"广东-广州";
+        }else if (indexPath.row == 4) {
+            cell.titleLabel.text = @"其他";
+            cell.contentLabel.text = @"";
         }
-        
         return cell;
     }
-    
     return nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return 5;
 }
 
 

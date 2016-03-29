@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="139" id="KGk-i7-Jjw" customClass="GenderCell">
+            <rect key="frame" x="0.0" y="0.0" width="468" height="139"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="468" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="男" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQO-Fa-SxQ">
+                        <rect key="frame" x="20" y="60" width="17" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Choose" translatesAutoresizingMaskIntoConstraints="NO" id="KP4-Dc-F9C">
+                        <rect key="frame" x="428" y="60" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="AAZ-AH-j7V"/>
+                            <constraint firstAttribute="height" constant="20" id="O0L-yi-Gvu"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eQO-Fa-SxQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9r5-Mv-rUH"/>
+                    <constraint firstAttribute="trailing" secondItem="KP4-Dc-F9C" secondAttribute="trailing" constant="20" id="S5q-xv-OF8"/>
+                    <constraint firstItem="eQO-Fa-SxQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="UQh-k3-Yee"/>
+                    <constraint firstItem="KP4-Dc-F9C" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ygD-Gk-Bz7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="rightImageView" destination="KP4-Dc-F9C" id="xvV-aE-xGe"/>
+                <outlet property="sexLabel" destination="eQO-Fa-SxQ" id="aNF-OQ-fCS"/>
+            </connections>
+            <point key="canvasLocation" x="612" y="264.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Choose" width="25" height="25"/>
+    </resources>
+</document>

@@ -87,12 +87,11 @@
 
 - (IBAction)clickDone:(id)sender {
     
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
-    
     // 从缓存中获取到手机号码
     NSString * mobile = [[NSUserDefaults standardUserDefaults]objectForKey:@"mobile"];
     NSString * verCode = [[NSUserDefaults standardUserDefaults]objectForKey:@"verCode"];
 
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
     if (_pwdAgainTextfield.text.length < 6) {
         _mbpHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         _mbpHUD.labelText = @"密码长度不能低于6位";
@@ -100,29 +99,101 @@
         dispatch_after(popTime, dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
-    }else {
-        if (![_pwdAgainTextfield.text isEqualToString:_pwdTextfield.text]) {
-            
-        }
+    }else if (![_pwdAgainTextfield.text isEqualToString:_pwdTextfield.text]) {
+        _mbpHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        _mbpHUD.labelText = @"两次输入的密码不一致";
+        _mbpHUD.mode = MBProgressHUDModeText;
+        dispatch_after(popTime, dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
     }
-    [_riffNetworkManager userSignupWithMobile:mobile Pwd:_pwdAgainTextfield.text VerCode:verCode DTZSuccessBlock:^(NSDictionary *successBlock) {
-        
-    } DTZFailBlock:^(NSDictionary *failBlock) {
-        
-    }];
-    
-    _appDelegate = [UIApplication sharedApplication].delegate;
-    [_appDelegate setupNavigationController];
+    if (self.isSignup) {
+        [_riffNetworkManager userSignupWithMobile:mobile Pwd:_pwdAgainTextfield.text VerCode:verCode DTZSuccessBlock:^(NSDictionary *successBlock) {
+            //注册成功.
+            NSNumber * code = [successBlock objectForKey:@"code"];
+            if (code.intValue == 200) {
+                _mbpHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                _mbpHUD.labelText = @"注册成功";
+                _mbpHUD.mode = MBProgressHUDModeText;
+                dispatch_after(popTime, dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                });
+            }
+            //缓存保存user 信息
+            [self saveUserInfo:[successBlock objectForKey:@"user"]];
+            _appDelegate = [UIApplication sharedApplication].delegate;
+            [_appDelegate setupNavigationController];
+        } DTZFailBlock:^(NSDictionary *failBlock) {
+            // 注册 失败.
+        }];
+    }else {
+        // 修改密码
+        //获取用户手机号码
+        [_riffNetworkManager userResetPwdWithMobile:mobile NewPwd:_pwdTextfield.text VerCode:verCode DTZSuccessBlock:^(NSDictionary *successBlock) {
+            NSNumber * code = [successBlock objectForKey:@"code"];
+            if (code.intValue == 200) {
+                //重置密码成功.直接跳转到登陆后的主界面
+                //清空缓存，保存用户登陆后的信息.
+                [self saveUserInfo:[successBlock objectForKey:@"user"]];
+                
+                _appDelegate = [UIApplication sharedApplication].delegate;
+                [_appDelegate setupNavigationController];
+                
+            }
+        } DTZFailBlock:^(NSDictionary *failBlock) {
+            _mbpHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            _mbpHUD.labelText = @"服务器故障";
+            _mbpHUD.mode = MBProgressHUDModeText;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
+        }];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// 注册成功 .保存 用户信息
+- (void)saveUserInfo:(NSDictionary *)userInfo {
+    NSString * mobile = [userInfo objectForKey:@"mobile"];
+    NSNumber * sex = [userInfo objectForKey:@"sex"];
+    NSString * token = [userInfo objectForKey:@"token"];
+    NSNumber * userId = [userInfo objectForKey:@"id"];
+    NSString * username = [userInfo objectForKey:@"username"];
+    NSString * weChat = [userInfo objectForKey:@"weChat"];
+    NSString * weibo = [userInfo objectForKey:@"weibo"];
+    NSString * qq = [userInfo objectForKey:@"qq"];
+    NSString * email = [userInfo objectForKey:@"email"];
+    NSString * district = [userInfo objectForKey:@"city"];
+    [[NSUserDefaults standardUserDefaults]setObject:mobile forKey:@"loginPhoneNumber"];
+    [[NSUserDefaults standardUserDefaults]setObject:mobile forKey:@"mobile"];
+    [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"token"];
+    [[NSUserDefaults standardUserDefaults]setObject:userId forKey:@"userId"];
+    if (username) {
+        [[NSUserDefaults standardUserDefaults]setObject:username forKey:@"username"];
+    }
+    if (weChat) {
+        [[NSUserDefaults standardUserDefaults]setObject:weChat forKey:@"weChat"];
+    }
+    if (weibo) {
+        [[NSUserDefaults standardUserDefaults]setObject:weibo forKey:@"weibo"];
+    }
+    if (email) {
+        [[NSUserDefaults standardUserDefaults]setObject:email forKey:@"email"];
+    }
+    if (district) {
+        [[NSUserDefaults standardUserDefaults]setObject:district forKey:@"district"];
+    }
+    if (qq) {
+        [[NSUserDefaults standardUserDefaults]setObject:qq forKey:@"qq"];
+    }
+    if (sex.intValue == 0) {
+        //如果是0的话是没有设置过
+    }else if (sex.intValue == 1) {
+        [[NSUserDefaults standardUserDefaults]setObject:@"male" forKey:@"gender"];
+    }else if (sex.intValue == 2) {
+        [[NSUserDefaults standardUserDefaults]setObject:@"female" forKey:@"gender"];
+    }
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
-*/
 
 @end

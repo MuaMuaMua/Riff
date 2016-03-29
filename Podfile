@@ -3,3 +3,5 @@ pod 'ASIHTTPRequest', '~> 1.8.2'
 pod "Qiniu", "~> 7.0"
 pod 'MBProgressHUD', '~> 0.9.2'
 pod 'Masonry'
+pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+pod 'SDWebImage'

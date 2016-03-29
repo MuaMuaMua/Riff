@@ -14,17 +14,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="518" height="236.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="頭像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QS-UN-y0C">
-                        <rect key="frame" x="20" y="109" width="34" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="頭像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QS-UN-y0C">
+                        <rect key="frame" x="20" y="108" width="34" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.29411764709999999" green="0.23921568630000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RiffRightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="gzN-WP-BQU">
-                        <rect key="frame" x="480" y="104" width="30" height="30"/>
+                        <rect key="frame" x="495" y="111" width="15" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="NqP-CY-3Sn"/>
-                            <constraint firstAttribute="width" constant="30" id="hse-Fm-jU1"/>
+                            <constraint firstAttribute="height" constant="15" id="NqP-CY-3Sn"/>
+                            <constraint firstAttribute="width" constant="15" id="hse-Fm-jU1"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqZ-W2-KE8" userLabel="Separator">
@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CHUANG" translatesAutoresizingMaskIntoConstraints="NO" id="2VJ-BP-Tsz">
-                        <rect key="frame" x="385" y="79" width="80" height="80"/>
+                        <rect key="frame" x="395" y="79" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="il6-QQ-cb0"/>
                             <constraint firstAttribute="height" constant="80" id="x2l-Hg-Kr5"/>
@@ -43,7 +43,7 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gzN-WP-BQU" firstAttribute="leading" secondItem="2VJ-BP-Tsz" secondAttribute="trailing" constant="15" id="8bX-FU-KL8"/>
+                    <constraint firstItem="gzN-WP-BQU" firstAttribute="leading" secondItem="2VJ-BP-Tsz" secondAttribute="trailing" constant="20" id="8bX-FU-KL8"/>
                     <constraint firstItem="gzN-WP-BQU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Cwd-TO-qOu"/>
                     <constraint firstItem="4QS-UN-y0C" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Hxl-jv-V31"/>
                     <constraint firstAttribute="trailing" secondItem="gzN-WP-BQU" secondAttribute="trailing" constant="8" id="UIw-5T-b0F"/>
@@ -58,7 +58,7 @@
                 <outlet property="avatarImageView" destination="2VJ-BP-Tsz" id="3Oz-7q-kW2"/>
                 <outlet property="separatorView" destination="CqZ-W2-KE8" id="tef-5S-WJV"/>
             </connections>
-            <point key="canvasLocation" x="895" y="474.5"/>
+            <point key="canvasLocation" x="983" y="487.5"/>
         </tableViewCell>
     </objects>
     <resources>

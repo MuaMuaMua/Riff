@@ -69,7 +69,6 @@
 
 - (IBAction)clickNext:(id)sender {
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
-
     if (_vcTextfield.text.length != 6 && _pnTextfield.text.length != 11) {
         _mbpHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         _mbpHUD.labelText = @"输入有误";
@@ -99,6 +98,11 @@
                     }
                     
                     SetPwdViewController * setPwdVC = [[SetPwdViewController alloc]init];
+                    if (self.isSignupVC) {
+                        setPwdVC.isSignup = YES;
+                    }else {
+                        setPwdVC.isSignup = NO;
+                    }
                     [self.navigationController pushViewController:setPwdVC animated:YES];
                 });
             }else if(code.intValue == 414) {

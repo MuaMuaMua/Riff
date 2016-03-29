@@ -7,8 +7,8 @@
 //
 
 #import "RiffNetworkManager.h"
-
 #import <AFNetworking.h>
+#import <QiniuSDK.h>
 
 @implementation RiffNetworkManager
 
@@ -119,7 +119,15 @@
 - (void)getQNTokenWithDTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
     NSString * url = @"/qiniu/uptoken";
     url = [baseURL stringByAppendingString:url];
-    [self.networkManager GET:url parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"token"]) {
+        [params setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] forKey:@"token"];
+    }
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userId"]) {
+        [params setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"userId"] forKey:@"userId"];
+    }
+    
+    [self.networkManager GET:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         dtzSuccessBlock(responseData);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
@@ -163,11 +171,12 @@
 }
 
 //用户登出
-- (void)userLogoutWithToken:(NSString *)token DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+- (void)userLogoutWithTokenwithDTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
     NSString * url = @"/user/logout";
     url = [baseURL stringByAppendingString:url];
     NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
-    [params setObject:token forKey:@"token"];
+    [params setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] forKey:@"token"];
+    [params setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"userId"] forKey:@"userId"];
     
     [self.networkManager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
@@ -200,12 +209,15 @@
 }
 
 //用户修改密码
-- (void)userChangePwdWithOldPwd:(NSString *)oldPassword NewPwd:(NSString *)newPwd Token:(NSString *)token DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+- (void)userChangePwdWithOldPwd:(NSString *)oldPassword NewPwd:(NSString *)newPwd DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
     NSString * url = @"/user/passwd";
     url = [baseURL stringByAppendingString:url];
     NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
     [params setObject:oldPassword forKey:@"oldPass"];
+    NSString * token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    NSNumber * userId = [[NSUserDefaults standardUserDefaults]objectForKey:@"userId"];
     [params setObject:token forKey:@"token"];
+    [params setObject:userId forKey:@"userId"];
     [params setObject:newPwd forKey:@"newPass"];
     [self.networkManager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
@@ -214,6 +226,153 @@
         NSLog(@"%@",error);
         NSDictionary * errorDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器错误",@"msg", nil];
         dtzFailBlock(errorDictionary);
+    }];
+}
+
+//获取新的 链接.
+- (void)getNewAdvWithDTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+    NSString * url = @"/advertisement/getNewAdvertisementByUserId";
+    url = [baseURL stringByAppendingString:url];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    NSString * token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    NSNumber * userId = [[NSUserDefaults standardUserDefaults]objectForKey:@"userId"];
+    
+    [params setObject:token forKey:@"token"];
+    [params setObject:userId forKey:@"userId"];
+    
+    [self.networkManager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        dtzSuccessBlock(responseData);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSDictionary * responseError = [NSDictionary dictionaryWithObject:@"服务器错误" forKey:@"response"];
+        dtzFailBlock(responseError);
+    }];
+}
+
+//修改用户一般的属性
+- (void)userChangeUserInfoWithProperty:(NSString *)propertyName PropertyValue:(NSString *)propertyValue DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock{
+    NSString * url = @"/user/editUserCommonInfo";
+    url = [baseURL stringByAppendingString:url];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    [params setObject:propertyName forKey:@"propertyName"];
+    [params setObject:propertyValue forKey:@"propertyValue"];
+    NSString * token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    NSNumber * userId = [[NSUserDefaults standardUserDefaults]objectForKey:@"userId"];
+    [params setObject:token forKey:@"token"];
+    [params setObject:userId forKey:@"userId"];
+    [self.networkManager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        dtzSuccessBlock(responseData);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSDictionary * responseData = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器故障",@"response", nil];
+        dtzFailBlock(responseData);
+    }];
+}
+
+//用户修改性别.
+- (void)userChangeUserSexInfoWithGender:(NSString *)gender DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+    NSString * url = @"/user/editSex";
+    url = [baseURL stringByAppendingString:url];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]initWithObjectsAndKeys:gender,@"sexInfo", nil];
+    NSString * token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    NSNumber * userId = [[NSUserDefaults standardUserDefaults]objectForKey:@"userId"];
+    [params setObject:token forKey:@"token"];
+    [params setObject:userId forKey:@"userId"];
+    [self.networkManager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        dtzSuccessBlock(responseData);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSDictionary * responseData = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器故障",@"response", nil];
+        dtzFailBlock(responseData);
+    }];
+}
+
+//上传用户头像到服务器
+- (void)uploadUserAvatarUrlWithUrl:(NSString *)urlStr DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+    NSString * url = @"/user/uploadUserAvatar";
+    url = [baseURL stringByAppendingString:url];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    [params setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"] forKey:@"userId"];
+    [params setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] forKey:@"token"];
+    [params setObject:urlStr forKey:@"avatarUrl"];
+    [self.networkManager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        dtzSuccessBlock(responseData);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSDictionary * responseData = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器故障",@"response",nil];
+        dtzFailBlock(responseData);
+    }];
+}
+
+- (void)saveDeviceTokenWithDeviceToken:(NSString *)deviceToken DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+    NSString * url = @"/user/saveDeviceToken";
+    url = [baseURL stringByAppendingString:url];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"token"]) {
+        [params setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] forKey:@"token"];
+    }
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"userId"]) {
+        [params setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"] forKey:@"userId"];
+    }
+    [params setObject:deviceToken forKey:@"deviceToken"];
+    [self.networkManager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        dtzSuccessBlock(responseData);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSDictionary * response = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器出错",@"response", nil];
+        dtzFailBlock(response);
+    }];
+}
+
+- (void)userWithdrawWithDTZSuccess:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+    NSString * url = @"/Withdraw/withdrawCash";
+    url = [baseURL stringByAppendingString:url];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
+        [params setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]forKey:@"token"];
+    }
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"userId"]) {
+        [params setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"userId"] forKey:@"userId"];
+    }
+    [self.networkManager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * responseData  = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        dtzSuccessBlock(responseData);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSDictionary * responseData = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器故障",@"response", nil];
+        dtzFailBlock(responseData);
+    }];
+}
+
+//头像data 上传至 七牛
+- (void)uploadAvatarToQNServerWithImageData:(NSData *)imageData Key:(NSString *)key UploadToken:(NSString *)uploadToken DTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+    QNUploadManager * upManager = [[QNUploadManager alloc]init];
+    [upManager putData:imageData key:key token:uploadToken complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        if (info.statusCode == 200) {
+            NSString * avatarUrl = [QNDomain stringByAppendingString:[NSString stringWithFormat:@"//%@",key]];
+            [[NSUserDefaults standardUserDefaults]setObject:avatarUrl forKey:@"avatar"];
+            dtzSuccessBlock(nil);
+        }else {
+            dtzFailBlock(nil);
+        }
+    } option:nil];
+}
+
+- (void)countNotWithdrawWithDTZSuccessBlock:(DTZSuccessBlock)dtzSuccessBlock DTZFailBlock:(DTZFailBlock)dtzFailBlock {
+    NSString * url = @"/ClickRel/findNotWithdrawClickRel";
+    url = [baseURL stringByAppendingString:url];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"token"]) {
+        [params setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] forKey:@"token"];
+    }
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"userId"]) {
+        [params setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"] forKey:@"userId"];
+    }
+    [self.networkManager GET:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        dtzSuccessBlock(responseData);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSDictionary * response = [[NSDictionary alloc]initWithObjectsAndKeys:@"服务器故障",@"response", nil];
+        dtzFailBlock(response);
     }];
 }
 

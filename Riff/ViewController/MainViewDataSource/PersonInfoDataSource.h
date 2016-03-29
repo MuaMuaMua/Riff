@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "PersonalSecondCell.h"
 
-@interface PersonInfoDataSource : NSObject<UITableViewDataSource>
+@protocol PersonalInfoDelegate <NSObject>
 
+@optional
+- (void)withdrawTrans;
 
+@end
 
+@interface PersonInfoDataSource : NSObject<UITableViewDataSource,PersonalCellWithdrawDelegate>
+
+@property (strong, nonatomic) id<PersonalInfoDelegate> delegate;
 
 @end

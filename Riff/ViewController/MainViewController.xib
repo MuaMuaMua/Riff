@@ -16,21 +16,30 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="CTt-Fm-MIl">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CTt-Fm-MIl">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHR-J5-gck" userLabel="WeChatDis">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHR-J5-gck" userLabel="WeChatDis">
                     <rect key="frame" x="128" y="613" width="49" height="49"/>
-                    <state key="normal" image="WeiBo"/>
+                    <state key="normal" image="WeChatFrd"/>
+                    <connections>
+                        <action selector="clickWechatDis:" destination="-1" eventType="touchUpInside" id="TzT-5t-doF"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqk-pL-GdD" userLabel="WeiBo">
                     <rect key="frame" x="198" y="613" width="49" height="49"/>
-                    <state key="normal" image="WeChat"/>
+                    <state key="normal" image="WeiBo"/>
+                    <connections>
+                        <action selector="clickWeibo:" destination="-1" eventType="touchUpInside" id="rwQ-NI-7CX"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmn-SW-lbQ" userLabel="Other">
                     <rect key="frame" x="267" y="613" width="49" height="49"/>
-                    <state key="normal" image="WeiBo"/>
+                    <state key="normal" image="Others"/>
+                    <connections>
+                        <action selector="clickOthers:" destination="-1" eventType="touchUpInside" id="ZmU-5F-w1A"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="waY-c2-U6O">
                     <rect key="frame" x="188" y="627" width="1" height="20"/>
@@ -40,9 +49,12 @@
                         <constraint firstAttribute="width" constant="1" id="hUK-MA-crl"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk8-Wx-dGh" userLabel="WeChatFrd">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk8-Wx-dGh" userLabel="WeChatFrd">
                     <rect key="frame" x="59" y="613" width="49" height="49"/>
                     <state key="normal" image="WeChat"/>
+                    <connections>
+                        <action selector="clickWechatFrd:" destination="-1" eventType="touchUpInside" id="L7m-KN-fhD"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -63,11 +75,13 @@
                 <constraint firstAttribute="trailing" secondItem="CTt-Fm-MIl" secondAttribute="trailing" id="uWw-G2-ggJ"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="1290.5" y="548.5"/>
+            <point key="canvasLocation" x="1905.5" y="717.5"/>
         </view>
     </objects>
     <resources>
+        <image name="Others" width="49" height="49"/>
         <image name="WeChat" width="49" height="49"/>
+        <image name="WeChatFrd" width="49" height="49"/>
         <image name="WeiBo" width="49" height="49"/>
     </resources>
 </document>

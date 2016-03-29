@@ -10,7 +10,7 @@
 
 @interface SignupViewController : UIViewController
 
-
+@property BOOL isSignupVC;
 
 
 

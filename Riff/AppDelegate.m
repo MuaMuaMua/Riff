@@ -10,33 +10,24 @@
 #import "RiffNavigationController.h"
 #import "MainViewController.h"
 #import "LoginViewController.h"
+#import "WXApi.h"
+#import <WeiboSDK.h>
+#import "RiffNetworkManager.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <WXApiDelegate,WeiboSDKDelegate> {
+    RiffNetworkManager * _riffNetworkManager;
+}
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-//    [self setupNavigationController];
-    
-    //注册APNS
-//    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge)];
-    
-//#ifdef __IPHONE_8_0 //这里主要是针对iOS 8.0,相应的8.1,8.2等版本各程序员可自行发挥，如果苹果以后推出更高版本还不会使用这个注册方式就不得而知了……
-    
-//    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-
-//    }
-
-//    UIUserNotificationType myTypes = UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound;
-//    
-//    UIUserNotificationSettings *settings =[UIUserNotificationSettings settingsForTypes:myTypes categories:nil];
-//    
-//    [[UIApplication sharedApplication]registerUserNotificationSettings:settings];
-    
+    //注册wechat
+    [WXApi registerApp:@"wx3b77a200c4391e82"];
+    //注册weibo
+    [WeiboSDK registerApp:@"3802460133"];
+    // 默认已经是8.0 以上的版本
     //判断是否由远程消息通知触发应用程序启动
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]!=nil) {
         //获取应用程序消息通知标记数（即小红圈中的数字）
@@ -51,20 +42,62 @@
     //消息推送注册
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-//    [self setupLoginVC];
-    [self setupNavigationController];
+//     判断是否登陆过了，如果登陆过了，直接跳转到主界面。不需要登陆。
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"loginPhoneNumber"]) {
+//        已经登录过了
+        [self setupNavigationController];
+    }else {
+        [self setupLoginVC];
+    }
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-
     return YES;
+}
+
+
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
+    //收到weibo的请求
+    NSLog(@"receive weibo request");
+
+}
+
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
+    //收到weibo的回调
+    NSLog(@"receive weibo response");
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    // 判断是来自 WeChat 还是Weibo 的请求。
+    NSString *string =[url absoluteString];
+    NSLog(@"%@",string);
+    return [WeiboSDK handleOpenURL:url
+                          delegate:self];
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    NSLog(@"%@",url);
+    return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (void)onResp:(BaseResp *)resp {
+    NSLog(@"收到回调");
+}
+
+- (void)onReq:(BaseReq *)req {
+    NSLog(@"发出请求");
 }
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *token = [NSString stringWithFormat:@"%@", deviceToken];
     NSLog(@"%@",deviceToken);
     NSLog(@"My token is:%@", token);
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
+    [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"deviceToken"];
     //这里应将device token发送到服务器端
     NSLog(@"推送到服务器");
-    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -87,47 +120,39 @@
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
     [application registerForRemoteNotifications];
-    //
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [UIApplication sharedApplication].applicationIconBadgeNumber=0;
-    for (id key in userInfo) {
-        NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
-    }
-    /* eg.
-     key: aps, value: {
-     alert = "\U8fd9\U662f\U4e00\U6761\U6d4b\U8bd5\U4fe1\U606f";
-     badge = 1;
-     sound = default;
-     }
-     */
-    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"remote notification" message:userInfo[@"aps"][@"alert"] delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
-    [alert show];
-
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+//    for (id key in userInfo) {
+//        NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
+//    }
+//    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"remote notification" message:userInfo[@"aps"][@"alert"] delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
+//    [alert show];
+    // 更新新的webview 重新加载
+    [[NSUserDefaults standardUserDefaults]setObject:@"YES" forKey:@"ReloadKey"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadNewPassage" object:nil];
+    
 }
 
-
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
 }
 
 @end

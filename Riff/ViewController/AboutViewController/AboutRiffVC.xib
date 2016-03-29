@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutRiffVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBGView" translatesAutoresizingMaskIntoConstraints="NO" id="LXi-Nv-4LL">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RiffName" translatesAutoresizingMaskIntoConstraints="NO" id="LVk-cb-PKj">
+                    <rect key="frame" x="235" y="110" width="130" height="86"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="86" id="UU5-mB-pJb"/>
+                        <constraint firstAttribute="width" constant="130" id="teM-l7-o4r"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Riff  1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNW-Me-rwB">
+                    <rect key="frame" x="240" y="211" width="121" height="35"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                    <color key="textColor" red="0.29411764709999999" green="0.23921568630000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="廣州創次方信息技術有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h8-zQ-4ZB">
+                    <rect key="frame" x="209" y="536" width="182" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.29411764709999999" green="0.23921568630000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright © CHUANG . ALL Rights Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ru-UE-hSm">
+                    <rect key="frame" x="157" y="573" width="289" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.29411764709999999" green="0.23921568630000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="5Ru-UE-hSm" firstAttribute="top" secondItem="4h8-zQ-4ZB" secondAttribute="bottom" constant="20" id="0RV-jn-DD1"/>
+                <constraint firstAttribute="bottom" secondItem="5Ru-UE-hSm" secondAttribute="bottom" constant="10" id="DrK-g7-Lsb"/>
+                <constraint firstItem="LVk-cb-PKj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="110" id="EXY-DA-1h0"/>
+                <constraint firstItem="LXi-Nv-4LL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Eks-45-7gy"/>
+                <constraint firstItem="dNW-Me-rwB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J43-T0-5Go"/>
+                <constraint firstItem="5Ru-UE-hSm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LW5-Pf-p9M"/>
+                <constraint firstAttribute="bottom" secondItem="LXi-Nv-4LL" secondAttribute="bottom" id="XEu-Rc-lhL"/>
+                <constraint firstAttribute="trailing" secondItem="LXi-Nv-4LL" secondAttribute="trailing" id="ZV9-n3-rIo"/>
+                <constraint firstItem="dNW-Me-rwB" firstAttribute="top" secondItem="LVk-cb-PKj" secondAttribute="bottom" constant="15" id="mhC-AL-iBu"/>
+                <constraint firstItem="LXi-Nv-4LL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r1n-ne-kM2"/>
+                <constraint firstItem="LVk-cb-PKj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vBw-6G-HXL"/>
+                <constraint firstItem="4h8-zQ-4ZB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yti-w3-EPa"/>
+            </constraints>
+            <point key="canvasLocation" x="490" y="378"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LoginBGView" width="400" height="657"/>
+        <image name="RiffName" width="130" height="73"/>
+    </resources>
+</document>

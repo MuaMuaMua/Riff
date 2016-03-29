@@ -14,9 +14,6 @@
 
 @implementation SettingDataSource
 
-
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -35,20 +32,18 @@
                 cell.titleLabel.text = @"通知";
                 break;
             case 1:
-                cell.titleLabel.text = @"隐私";
-                break;
-            case 2:
                 cell.titleLabel.text = @"評價";
                 break;
-            case 3:
+            case 2:
                 cell.titleLabel.text = @"關於";
                 break;
-            case 4:
+            case 3:
                 cell.titleLabel.text = @"安全";
                 break;
             default:
                 break;
         }
+        cell.contentLabel.text = @"";
         cell.titleLabel.textColor = [UIColor colorWithRed:94.0/255 green:80.0/255 blue:120.0/255 alpha:1];
         cell.separatorView.backgroundColor = [UIColor colorWithRed:94.0/255 green:80.0/255 blue:120.0/255 alpha:1];
         return cell;
@@ -74,7 +69,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (section == 0) {
-        return 5;
+        return 4;
     }else {
         return 1;
     }

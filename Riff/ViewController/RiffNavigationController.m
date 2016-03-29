@@ -24,7 +24,6 @@
     
     [self.navigationItem.backBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,[UIFont systemFontOfSize:22],UITextAttributeFont, nil] forState:UIControlStateNormal];
 
-    
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"BGVIEW"] forBarMetrics:UIBarMetricsDefault];
     
 }

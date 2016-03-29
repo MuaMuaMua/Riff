@@ -14,5 +14,7 @@
 
 - (void)setupNavigationController;
 
+- (void)setupLoginVC;
+
 @end
 

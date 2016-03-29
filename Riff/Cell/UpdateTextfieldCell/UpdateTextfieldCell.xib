@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="UpdateTextfieldCell">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="377" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DTZ" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="4PF-NC-JXL">
+                        <rect key="frame" x="20" y="5" width="337" height="70"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4PF-NC-JXL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="53k-9d-zkp"/>
+                    <constraint firstAttribute="bottom" secondItem="4PF-NC-JXL" secondAttribute="bottom" constant="5" id="Zs3-H1-aSw"/>
+                    <constraint firstItem="4PF-NC-JXL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eBl-l5-zyk"/>
+                    <constraint firstItem="4PF-NC-JXL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="eDa-r8-U4k"/>
+                    <constraint firstItem="4PF-NC-JXL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="kzh-vC-Ulg"/>
+                    <constraint firstAttribute="trailing" secondItem="4PF-NC-JXL" secondAttribute="trailing" constant="20" id="zat-ll-3GQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="updateTextfield" destination="4PF-NC-JXL" id="BXY-bO-Nuj"/>
+            </connections>
+            <point key="canvasLocation" x="226.5" y="268"/>
+        </tableViewCell>
+    </objects>
+</document>

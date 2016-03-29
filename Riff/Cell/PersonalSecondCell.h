@@ -8,12 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PersonalCellWithdrawDelegate <NSObject>
+
+@optional
+- (void)withdrawAction;
+
+@end
+
 @interface PersonalSecondCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIView *numberlLabel;
+@property (strong, nonatomic) IBOutlet UILabel *numberlLabel;
 
 @property (strong, nonatomic) IBOutlet UIButton *withdrawalBtn;
 
 @property (strong, nonatomic) IBOutlet UILabel *typeLabel;
+
+@property (strong, nonatomic) id<PersonalCellWithdrawDelegate> delegate;
 
 @end

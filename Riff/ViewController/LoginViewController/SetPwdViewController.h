@@ -10,4 +10,6 @@
 
 @interface SetPwdViewController : UIViewController
 
+@property BOOL isSignup;
+
 @end

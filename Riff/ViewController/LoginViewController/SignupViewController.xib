@@ -38,17 +38,17 @@
                             <rect key="frame" x="3" y="0.0" width="514" height="173"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3Z-8i-RGZ" userLabel="SeparatorView">
-                                    <rect key="frame" x="1" y="86" width="512" height="1"/>
+                                    <rect key="frame" x="1" y="86" width="512" height="2"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="Dvy-cp-oJc"/>
+                                        <constraint firstAttribute="height" constant="2" id="Dvy-cp-oJc"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk3-bB-tX7" userLabel="BottomView">
-                                    <rect key="frame" x="1" y="172" width="512" height="1"/>
+                                    <rect key="frame" x="1" y="171" width="512" height="2"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="suw-vd-gWO"/>
+                                        <constraint firstAttribute="height" constant="2" id="suw-vd-gWO"/>
                                     </constraints>
                                 </view>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入大陆手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K53-UV-Acy">
@@ -56,8 +56,9 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KEV-bH-PIg">
-                                    <rect key="frame" x="10" y="90" width="424" height="81"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KEV-bH-PIg">
+                                    <rect key="frame" x="10" y="91" width="424" height="81"/>
+                                    <color key="textColor" red="0.29411764709999999" green="0.23921568630000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
@@ -79,6 +80,7 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.29411764709999999" green="0.23921568630000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="O3Z-8i-RGZ" firstAttribute="centerY" secondItem="quq-lg-gl8" secondAttribute="centerY" id="6Hv-Ti-NFY"/>
                                 <constraint firstItem="O3Z-8i-RGZ" firstAttribute="leading" secondItem="quq-lg-gl8" secondAttribute="leading" constant="1" id="Csr-OB-r2r"/>

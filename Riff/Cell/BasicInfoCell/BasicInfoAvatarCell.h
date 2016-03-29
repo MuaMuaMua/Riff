@@ -10,4 +10,7 @@
 
 @interface BasicInfoAvatarCell : UITableViewCell
 
+
+
+
 @end

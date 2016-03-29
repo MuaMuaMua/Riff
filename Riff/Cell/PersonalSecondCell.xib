@@ -37,6 +37,9 @@
                         <rect key="frame" x="131" y="249" width="58" height="47"/>
                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                         <state key="normal" title="提现"/>
+                        <connections>
+                            <action selector="clickWithdraw:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dbG-tE-LtX"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -53,11 +56,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="numberlLabel" destination="H2p-sc-9uM" id="YOZ-ax-Rse"/>
+                <outlet property="numberlLabel" destination="hUL-08-PoX" id="PSg-u3-LtC"/>
                 <outlet property="typeLabel" destination="dgH-Jt-2Oz" id="j3q-1F-eOy"/>
                 <outlet property="withdrawalBtn" destination="qtc-aM-lZp" id="hOY-eo-Lvf"/>
             </connections>
-            <point key="canvasLocation" x="273" y="538"/>
+            <point key="canvasLocation" x="600" y="563"/>
         </tableViewCell>
     </objects>
 </document>

@@ -9,7 +9,7 @@
 #import "PersonInfoDataSource.h"
 #import "PersonalFirstCell.h"
 #import "PersonalSecondCell.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation PersonInfoDataSource
 
@@ -28,20 +28,24 @@
     
     UINib * nib1 = [UINib nibWithNibName:certif1 bundle:nil];
     UINib * nib2 = [UINib nibWithNibName:certif2 bundle:nil];
-    
     [tableView registerNib:nib1 forCellReuseIdentifier:certif1];
     [tableView registerNib:nib2 forCellReuseIdentifier:certif2];
-    
     if (indexPath.row == 0) {
         PersonalFirstCell * cell = [tableView dequeueReusableCellWithIdentifier:certif1];
         if ( cell == nil) {
             cell = [[PersonalFirstCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:certif1];
         }
-//        cell.avatarImageView.layer.masksToBounds = YES;
-//        cell.avatarImageView.layer.cornerRadius = 25.0;
-//        cell.avatarImageView.layer.borderWidth = 3.0f;
-//        cell.avatarImageView.layer.borderColor = [[UIColor whiteColor]CGColor];
-        cell.avatarImageView.image = [UIImage imageNamed:@"CHUANG"];
+        NSString * avatarUrl = [[NSUserDefaults standardUserDefaults]objectForKey:@"avatarUrl"];
+        if (avatarUrl) {
+            [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"CHUANG"] completed:nil];
+        }else {
+            cell.avatarImageView.image = [UIImage imageNamed:@"CHUANG"];
+        }
+        if ([[NSUserDefaults standardUserDefaults]objectForKey:@"username"]) {
+            cell.userName.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
+        }else {
+            cell.userName.text = @"";
+        }
         cell.separatorLine.backgroundColor = [UIColor colorWithRed:94.0/255 green:80.0/255 blue:120.0/255 alpha:1];
         return cell;
     }else {
@@ -49,13 +53,20 @@
         if ( cell == nil ) {
             cell = [[PersonalSecondCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:certif2];
         }
+        cell.delegate = self;
+        if ([[NSUserDefaults standardUserDefaults]objectForKey:@"totalClickTime"]) {
+            NSNumber * clickTime = [[NSUserDefaults standardUserDefaults]objectForKey:@"totalClickTime"];
+            cell.numberlLabel.text = [NSString stringWithFormat:@"%d次",clickTime.intValue];
+        }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell.withdrawalBtn setTitleColor:[UIColor colorWithRed:94.0/255 green:80.0/255 blue:120.0/255 alpha:1] forState:UIControlStateNormal];
         return cell;
     }
-    
     return nil;
 }
 
+- (void)withdrawAction {
+    [self.delegate withdrawTrans];
+}
 
 @end

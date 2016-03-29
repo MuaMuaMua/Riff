@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *separatorView;
 
+@property (strong, nonatomic) IBOutlet UILabel *contentLabel;
+
 @end
