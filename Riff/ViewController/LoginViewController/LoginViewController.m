@@ -130,6 +130,9 @@
     [[NSUserDefaults standardUserDefaults]setObject:mobile forKey:@"mobile"];
     [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"token"];
     [[NSUserDefaults standardUserDefaults]setObject:userId forKey:@"userId"];
+    if (district) {
+        [[NSUserDefaults standardUserDefaults]setObject:district forKey:@"locationStr"];
+    }
     if (avatarUrl) {
         [[NSUserDefaults standardUserDefaults]setObject:avatarUrl forKey:@"avatarUrl"];
     }

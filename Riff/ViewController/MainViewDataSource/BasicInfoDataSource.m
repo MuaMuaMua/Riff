@@ -46,6 +46,8 @@
             cell.avatarImageView.image = [UIImage imageNamed:@"CHUANG"];
         }
         
+        cell.avatarImageView.layer.cornerRadius = 8;
+        
         return cell;
     }else {
         BasicInfoCell * cell = [tableView dequeueReusableCellWithIdentifier:certif2];
@@ -81,7 +83,14 @@
             }else {
                 cell.contentLabel.text = @"";
             }
-            cell.contentLabel.text = @"广东-广州";
+            //locationStr
+            NSString * locationStr = [[NSUserDefaults standardUserDefaults]objectForKey:@"locationStr"];
+            if (locationStr != nil) {
+                cell.contentLabel.text = locationStr;
+            }else {
+                //如果为空 直接设置为@“”
+                cell.contentLabel.text = @"";
+            }
         }else if (indexPath.row == 4) {
             cell.titleLabel.text = @"其他";
             cell.contentLabel.text = @"";

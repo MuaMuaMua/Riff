@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,39 +15,51 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CHUANG" translatesAutoresizingMaskIntoConstraints="NO" id="QXG-Jm-SDl">
-                        <rect key="frame" x="20" y="20" width="50" height="50"/>
+                        <rect key="frame" x="20" y="26" width="70" height="70"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="M0u-i4-ikU"/>
-                            <constraint firstAttribute="width" constant="50" id="acY-4a-oRp"/>
+                            <constraint firstAttribute="height" constant="70" id="M0u-i4-ikU"/>
+                            <constraint firstAttribute="width" constant="70" id="acY-4a-oRp"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="133.33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP4-4O-JGj">
-                        <rect key="frame" x="115" y="20" width="128" height="49"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0B-sy-enA">
-                        <rect key="frame" x="310" y="20" width="26" height="49"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="廣州創次方信息技術有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu3-r2-Fvy">
-                        <rect key="frame" x="67" y="83" width="221" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDu-jQ-p3p">
+                        <rect key="frame" x="90" y="26" width="246" height="70"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP4-4O-JGj">
+                                <rect key="frame" x="20" y="0.0" width="20" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.29411764709999999" green="0.23921568630000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0B-sy-enA">
+                                <rect key="frame" x="50" y="0.0" width="21" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="廣州創次方信息技術有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu3-r2-Fvy">
+                                <rect key="frame" x="10" y="45" width="221" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29411764709999999" green="0.23921568630000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D0B-sy-enA" firstAttribute="top" secondItem="cDu-jQ-p3p" secondAttribute="top" id="AK9-Aa-qQT"/>
+                            <constraint firstItem="D0B-sy-enA" firstAttribute="leading" secondItem="AP4-4O-JGj" secondAttribute="trailing" constant="10" id="Lms-4l-XC8"/>
+                            <constraint firstItem="zu3-r2-Fvy" firstAttribute="leading" secondItem="cDu-jQ-p3p" secondAttribute="leading" constant="10" id="fGK-cA-AAm"/>
+                            <constraint firstItem="AP4-4O-JGj" firstAttribute="top" secondItem="cDu-jQ-p3p" secondAttribute="top" id="l6A-lP-HKs"/>
+                            <constraint firstAttribute="bottom" secondItem="zu3-r2-Fvy" secondAttribute="bottom" constant="4" id="msk-Ku-OKp"/>
+                            <constraint firstItem="AP4-4O-JGj" firstAttribute="leading" secondItem="cDu-jQ-p3p" secondAttribute="leading" constant="20" id="zaz-XN-Lbs"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="AP4-4O-JGj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7pg-v6-jLW"/>
-                    <constraint firstItem="AP4-4O-JGj" firstAttribute="centerY" secondItem="QXG-Jm-SDl" secondAttribute="centerY" id="GyM-bI-xkh"/>
-                    <constraint firstAttribute="trailing" secondItem="D0B-sy-enA" secondAttribute="trailing" constant="20" id="JYA-fg-Owi"/>
-                    <constraint firstItem="zu3-r2-Fvy" firstAttribute="centerX" secondItem="AP4-4O-JGj" secondAttribute="centerX" id="Mvf-35-6TD"/>
-                    <constraint firstItem="D0B-sy-enA" firstAttribute="centerY" secondItem="QXG-Jm-SDl" secondAttribute="centerY" id="Vyx-Pt-uJ8"/>
-                    <constraint firstItem="QXG-Jm-SDl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Zh4-lP-vpM"/>
-                    <constraint firstItem="QXG-Jm-SDl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="lId-1b-xas"/>
-                    <constraint firstItem="zu3-r2-Fvy" firstAttribute="top" secondItem="AP4-4O-JGj" secondAttribute="bottom" constant="14" id="mR0-yp-XWc"/>
+                    <constraint firstItem="cDu-jQ-p3p" firstAttribute="top" secondItem="QXG-Jm-SDl" secondAttribute="top" id="0b5-ve-LpQ"/>
+                    <constraint firstItem="QXG-Jm-SDl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AFk-dq-gkt"/>
+                    <constraint firstAttribute="trailing" secondItem="cDu-jQ-p3p" secondAttribute="trailing" constant="20" id="JW6-Zk-kK1"/>
+                    <constraint firstItem="cDu-jQ-p3p" firstAttribute="leading" secondItem="QXG-Jm-SDl" secondAttribute="trailing" id="eIY-Ag-moO"/>
+                    <constraint firstItem="cDu-jQ-p3p" firstAttribute="bottom" secondItem="QXG-Jm-SDl" secondAttribute="bottom" id="hbX-K5-KGo"/>
+                    <constraint firstItem="QXG-Jm-SDl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="sST-wu-ZqS"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -56,7 +68,7 @@
                 <outlet property="moneyTypeLabel" destination="D0B-sy-enA" id="goX-Lk-eEy"/>
                 <outlet property="totalMoneyLabel" destination="AP4-4O-JGj" id="ePs-CE-bSD"/>
             </connections>
-            <point key="canvasLocation" x="871" y="535.5"/>
+            <point key="canvasLocation" x="373" y="505.5"/>
         </tableViewCell>
     </objects>
     <resources>

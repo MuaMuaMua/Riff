@@ -41,6 +41,7 @@
         }else {
             cell.avatarImageView.image = [UIImage imageNamed:@"BlankAvatar"];
         }
+        cell.avatarImageView.layer.cornerRadius = 5;
         if ([[NSUserDefaults standardUserDefaults]objectForKey:@"username"]) {
             cell.userName.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
         }else {

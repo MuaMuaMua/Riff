@@ -95,7 +95,9 @@
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
     token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
     token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
-    [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"deviceToken"];
+    if(token != nil) {
+        [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"deviceToken"];
+    }
     //这里应将device token发送到服务器端
     NSLog(@"推送到服务器");
 }

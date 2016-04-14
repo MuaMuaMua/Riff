@@ -31,13 +31,13 @@
             case 0:
                 cell.titleLabel.text = @"通知";
                 break;
+//            case 1:
+//                cell.titleLabel.text = @"评价";
+//                break;
             case 1:
-                cell.titleLabel.text = @"評價";
+                cell.titleLabel.text = @"关于";
                 break;
             case 2:
-                cell.titleLabel.text = @"關於";
-                break;
-            case 3:
                 cell.titleLabel.text = @"安全";
                 break;
             default:
@@ -69,7 +69,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (section == 0) {
-        return 4;
+        return 3;
     }else {
         return 1;
     }

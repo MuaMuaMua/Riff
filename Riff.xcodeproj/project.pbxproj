@@ -93,6 +93,16 @@
 		60BEDE7A1CA12F72001F82E6 /* SocialDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEDE791CA12F72001F82E6 /* SocialDataSource.m */; };
 		60BEDE7E1CA13431001F82E6 /* AboutRiffVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEDE7C1CA13431001F82E6 /* AboutRiffVC.m */; };
 		60BEDE7F1CA13431001F82E6 /* AboutRiffVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60BEDE7D1CA13431001F82E6 /* AboutRiffVC.xib */; };
+		60C1AE471CBDE414009FAE89 /* Provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C1AE461CBDE414009FAE89 /* Provinces.plist */; };
+		60F9A0091CBC9ACF00BE8D82 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F9A0081CBC9ACF00BE8D82 /* ProvinceModel.m */; };
+		60F9A0101CBCEFEB00BE8D82 /* AreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F9A00E1CBCEFEB00BE8D82 /* AreaViewController.m */; };
+		60F9A0111CBCEFEB00BE8D82 /* AreaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F9A00F1CBCEFEB00BE8D82 /* AreaViewController.xib */; };
+		60F9A01B1CBCF21A00BE8D82 /* ProvinceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F9A0191CBCF21A00BE8D82 /* ProvinceCell.m */; };
+		60F9A01C1CBCF21A00BE8D82 /* ProvinceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F9A01A1CBCF21A00BE8D82 /* ProvinceCell.xib */; };
+		60F9A0201CBCF2AC00BE8D82 /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F9A01E1CBCF2AC00BE8D82 /* CityCell.m */; };
+		60F9A0211CBCF2AC00BE8D82 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F9A01F1CBCF2AC00BE8D82 /* CityCell.xib */; };
+		60F9A0251CBCF34B00BE8D82 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F9A0231CBCF34B00BE8D82 /* CityViewController.m */; };
+		60F9A0261CBCF34B00BE8D82 /* CityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F9A0241CBCF34B00BE8D82 /* CityViewController.xib */; };
 		D976312D27E223A9260DC7DA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A432AF41A5212579EC3E823 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -178,7 +188,7 @@
 		6086BFB21C968B73001F3702 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6086BFB31C968B73001F3702 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		6086BFB61C968B98001F3702 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
-		6086BFB71C968B98001F3702 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		6086BFB71C968B98001F3702 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; usesTabs = 1; };
 		6086BFB81C968B98001F3702 /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		6086BFBB1C968BB3001F3702 /* SetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPwdViewController.h; sourceTree = "<group>"; };
 		6086BFBC1C968BB3001F3702 /* SetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPwdViewController.m; sourceTree = "<group>"; };
@@ -255,6 +265,21 @@
 		60BEDE7B1CA13431001F82E6 /* AboutRiffVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRiffVC.h; sourceTree = "<group>"; };
 		60BEDE7C1CA13431001F82E6 /* AboutRiffVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRiffVC.m; sourceTree = "<group>"; };
 		60BEDE7D1CA13431001F82E6 /* AboutRiffVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutRiffVC.xib; sourceTree = "<group>"; };
+		60C1AE461CBDE414009FAE89 /* Provinces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Provinces.plist; path = Riff/Provinces.plist; sourceTree = "<group>"; };
+		60F9A0071CBC9ACF00BE8D82 /* ProvinceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
+		60F9A0081CBC9ACF00BE8D82 /* ProvinceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
+		60F9A00D1CBCEFEB00BE8D82 /* AreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaViewController.h; sourceTree = "<group>"; };
+		60F9A00E1CBCEFEB00BE8D82 /* AreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaViewController.m; sourceTree = "<group>"; };
+		60F9A00F1CBCEFEB00BE8D82 /* AreaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaViewController.xib; sourceTree = "<group>"; };
+		60F9A0181CBCF21A00BE8D82 /* ProvinceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceCell.h; sourceTree = "<group>"; };
+		60F9A0191CBCF21A00BE8D82 /* ProvinceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceCell.m; sourceTree = "<group>"; };
+		60F9A01A1CBCF21A00BE8D82 /* ProvinceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProvinceCell.xib; sourceTree = "<group>"; };
+		60F9A01D1CBCF2AC00BE8D82 /* CityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityCell.h; sourceTree = "<group>"; };
+		60F9A01E1CBCF2AC00BE8D82 /* CityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityCell.m; sourceTree = "<group>"; };
+		60F9A01F1CBCF2AC00BE8D82 /* CityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		60F9A0221CBCF34B00BE8D82 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		60F9A0231CBCF34B00BE8D82 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		60F9A0241CBCF34B00BE8D82 /* CityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityViewController.xib; sourceTree = "<group>"; };
 		B0C87C348C9ECF110EE0F837 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B36DC9E0C8F885878ADA7F0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +328,7 @@
 		60579D111C8FC34D00801A88 = {
 			isa = PBXGroup;
 			children = (
+				60C1AE461CBDE414009FAE89 /* Provinces.plist */,
 				607FBB6A1C9FC69C0050F7BC /* ThirdPart */,
 				60579D501C8FFC1400801A88 /* Model */,
 				60579D511C8FFC1400801A88 /* Cell */,
@@ -373,6 +399,8 @@
 		60579D501C8FFC1400801A88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				60F9A0071CBC9ACF00BE8D82 /* ProvinceModel.h */,
+				60F9A0081CBC9ACF00BE8D82 /* ProvinceModel.m */,
 			);
 			name = Model;
 			path = Riff/Model;
@@ -381,6 +409,7 @@
 		60579D511C8FFC1400801A88 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				60F9A0121CBCF1E000BE8D82 /* AreaCell */,
 				608595AB1C9D0099000F78B2 /* UpdateTextfieldCell */,
 				608B3FF41C9945EB00E0615B /* BasicInfoCell */,
 				6097F9A31C91529F0053CE79 /* AdvCell.h */,
@@ -422,6 +451,7 @@
 		60579D531C8FFC1400801A88 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				60F9A00C1CBCEFBF00BE8D82 /* AreaViewController */,
 				609517BD1CA3E0C500EE44C0 /* NewNotificationVC */,
 				609517B71CA27D1C00EE44C0 /* ChangePwdVC */,
 				60BEDE681CA113A7001F82E6 /* WebViewController */,
@@ -648,6 +678,32 @@
 			path = WebViewController;
 			sourceTree = "<group>";
 		};
+		60F9A00C1CBCEFBF00BE8D82 /* AreaViewController */ = {
+			isa = PBXGroup;
+			children = (
+				60F9A00D1CBCEFEB00BE8D82 /* AreaViewController.h */,
+				60F9A00E1CBCEFEB00BE8D82 /* AreaViewController.m */,
+				60F9A00F1CBCEFEB00BE8D82 /* AreaViewController.xib */,
+				60F9A0221CBCF34B00BE8D82 /* CityViewController.h */,
+				60F9A0231CBCF34B00BE8D82 /* CityViewController.m */,
+				60F9A0241CBCF34B00BE8D82 /* CityViewController.xib */,
+			);
+			path = AreaViewController;
+			sourceTree = "<group>";
+		};
+		60F9A0121CBCF1E000BE8D82 /* AreaCell */ = {
+			isa = PBXGroup;
+			children = (
+				60F9A0181CBCF21A00BE8D82 /* ProvinceCell.h */,
+				60F9A0191CBCF21A00BE8D82 /* ProvinceCell.m */,
+				60F9A01A1CBCF21A00BE8D82 /* ProvinceCell.xib */,
+				60F9A01D1CBCF2AC00BE8D82 /* CityCell.h */,
+				60F9A01E1CBCF2AC00BE8D82 /* CityCell.m */,
+				60F9A01F1CBCF2AC00BE8D82 /* CityCell.xib */,
+			);
+			path = AreaCell;
+			sourceTree = "<group>";
+		};
 		651B3E3FE2900E2355C1BEA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,6 +828,7 @@
 				6086BFB51C968B73001F3702 /* LoginViewController.xib in Resources */,
 				609517D41CA3E54C00EE44C0 /* ReceiveCell.xib in Resources */,
 				60579D2D1C8FC34D00801A88 /* LaunchScreen.storyboard in Resources */,
+				60F9A0211CBCF2AC00BE8D82 /* CityCell.xib in Resources */,
 				608B3FF31C99454400E0615B /* BasicInfoViewController.xib in Resources */,
 				6097F9D01C929C040053CE79 /* BasicInfoCell.xib in Resources */,
 				6097F9D81C92D0100053CE79 /* RiffViewController.xib in Resources */,
@@ -787,6 +844,7 @@
 				608B3FF91C99460E00E0615B /* BasicInfoAvatarCell.xib in Resources */,
 				60579D281C8FC34D00801A88 /* Main.storyboard in Resources */,
 				609517C71CA3E1D700EE44C0 /* NewNotificationVC.xib in Resources */,
+				60C1AE471CBDE414009FAE89 /* Provinces.plist in Resources */,
 				6086BFBA1C968B98001F3702 /* SignupViewController.xib in Resources */,
 				6086BFBF1C968BB3001F3702 /* SetPwdViewController.xib in Resources */,
 				609517BC1CA27D3300EE44C0 /* ChangePwdVC.xib in Resources */,
@@ -794,14 +852,17 @@
 				6086BFAE1C966774001F3702 /* ExitCell.xib in Resources */,
 				60579D581C90003F00801A88 /* MainViewController.xib in Resources */,
 				608B3FE91C99346E00E0615B /* NotificationViewController.xib in Resources */,
+				60F9A0111CBCEFEB00BE8D82 /* AreaViewController.xib in Resources */,
 				60BEDE7F1CA13431001F82E6 /* AboutRiffVC.xib in Resources */,
 				60BEDE6D1CA113C2001F82E6 /* RiffWebViewController.xib in Resources */,
 				6097F9CB1C929ABC0053CE79 /* BasicAvatarCell.xib in Resources */,
 				6097F9B11C9163D20053CE79 /* PersonalSecondCell.xib in Resources */,
+				60F9A0261CBCF34B00BE8D82 /* CityViewController.xib in Resources */,
 				609517B61CA2327A00EE44C0 /* GenderCell.xib in Resources */,
 				608595B61C9D2C84000F78B2 /* GenderViewController.xib in Resources */,
 				608595B01C9D00BB000F78B2 /* UpdateTextfieldCell.xib in Resources */,
 				60579D621C900DAD00801A88 /* BasicViewController.xib in Resources */,
+				60F9A01C1CBCF21A00BE8D82 /* ProvinceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +941,7 @@
 				6086BFB41C968B73001F3702 /* LoginViewController.m in Sources */,
 				6097F9CF1C929C040053CE79 /* BasicInfoCell.m in Sources */,
 				60B86A571C9BCFE50084858A /* AvatarViewController.m in Sources */,
+				60F9A0091CBC9ACF00BE8D82 /* ProvinceModel.m in Sources */,
 				60BEDE761CA12EF5001F82E6 /* SocialVC.m in Sources */,
 				608595B51C9D2C84000F78B2 /* GenderViewController.m in Sources */,
 				60579D251C8FC34D00801A88 /* ViewController.m in Sources */,
@@ -892,10 +954,12 @@
 				609517D91CA3E59500EE44C0 /* SAndShakeCell.m in Sources */,
 				60579D671C9022CE00801A88 /* RiffDataSource.m in Sources */,
 				608595AF1C9D00BB000F78B2 /* UpdateTextfieldCell.m in Sources */,
+				60F9A01B1CBCF21A00BE8D82 /* ProvinceCell.m in Sources */,
 				609517C61CA3E1D700EE44C0 /* NewNotificationVC.m in Sources */,
 				60579D221C8FC34D00801A88 /* AppDelegate.m in Sources */,
 				609517BB1CA27D3300EE44C0 /* ChangePwdVC.m in Sources */,
 				60579D5C1C90050600801A88 /* RiffNavigationController.m in Sources */,
+				60F9A0101CBCEFEB00BE8D82 /* AreaViewController.m in Sources */,
 				60579D1F1C8FC34D00801A88 /* main.m in Sources */,
 				6086BFAD1C966774001F3702 /* ExitCell.m in Sources */,
 				60579D6D1C90230100801A88 /* SettingDataSource.m in Sources */,
@@ -916,7 +980,9 @@
 				60579D6A1C9022E900801A88 /* PersonInfoDataSource.m in Sources */,
 				6097F9BE1C927DC80053CE79 /* SettingViewController.m in Sources */,
 				60B86A531C9B9E6C0084858A /* BasicInfoVCDataSource.m in Sources */,
+				60F9A0251CBCF34B00BE8D82 /* CityViewController.m in Sources */,
 				609517B51CA2327A00EE44C0 /* GenderCell.m in Sources */,
+				60F9A0201CBCF2AC00BE8D82 /* CityCell.m in Sources */,
 				60BEDE7E1CA13431001F82E6 /* AboutRiffVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

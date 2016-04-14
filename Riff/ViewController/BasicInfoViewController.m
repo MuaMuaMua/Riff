@@ -15,6 +15,7 @@
 #import "SocialVC.h"
 #import <MBProgressHUD.h>
 #import "MainViewController.h"
+#import "AreaViewController.h"
 
 @interface BasicInfoViewController ()<UITableViewDelegate> {
     
@@ -43,13 +44,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [_tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-//    MainViewController * mainViewController = [self.navigationController.viewControllers objectAtIndex:0];
-//    mainViewController.title = @"個人信息";
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"6NEWPersonalBar"] forBarMetrics:UIBarMetricsDefault];
 }
 
 #pragma mark - NSNotification CallBack
@@ -105,7 +108,9 @@
         [self.navigationController pushViewController:genderVC animated:YES];
     }else if (indexPath.row == 3) {
         // 暂时忽略.
-        
+        //地区选择
+        AreaViewController * areaViewController = [[AreaViewController alloc]init];
+        [self.navigationController pushViewController:areaViewController animated:YES];
     }else if (indexPath.row == 4) {
         // 跳转到其他 socialVC
         SocialVC * socialVC = [[SocialVC alloc]init];
